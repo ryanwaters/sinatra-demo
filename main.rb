@@ -19,7 +19,7 @@ end
 
 get '/movie' do
 	@imdbid = params[:id]
-	url = "http://www.omdbapi.com/?i=#{URI.escape(@imdbid)}"
+	url = "http://www.omdbapi.com/?i=#{URI.escape(@imdbid)}&tomatoes=true"
 	@movie = JSON.load(open(url).read)
 	erb :movies
 end
